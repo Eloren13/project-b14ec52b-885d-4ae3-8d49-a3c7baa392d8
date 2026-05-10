@@ -5,16 +5,16 @@ import { poems } from "@/data/poems";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "POSTUM — Литература и философия" },
+      { title: "ПОСТУМ — Литература и философия" },
       {
         name: "description",
         content:
-          "POSTUM — пространство литературы и философии. Случайное стихотворение русского поэта при каждом визите и спецпроекты POSTUM.",
+          "ПОСТУМ — пространство литературы и философии. Случайное стихотворение русского поэта при каждом визите и спецпроекты ПОСТУМ.",
       },
-      { property: "og:title", content: "POSTUM — Литература и философия" },
+      { property: "og:title", content: "ПОСТУМ — Литература и философия" },
       {
         property: "og:description",
-        content: "Случайное стихотворение русского поэта и спецпроекты POSTUM.",
+        content: "Случайное стихотворение русского поэта и спецпроекты ПОСТУМ.",
       },
     ],
   }),
@@ -42,7 +42,7 @@ function Index() {
           className="font-display font-medium leading-[0.85] tracking-tight text-foreground"
           style={{ fontSize: "clamp(5rem, 22vw, 22rem)" }}
         >
-          POSTUM
+          ПОСТУМ
         </h1>
         <div className="mt-6 flex items-center gap-4 text-muted-foreground">
           <span className="h-px w-16 bg-rule md:w-32" />
@@ -92,7 +92,7 @@ function Index() {
             Раздел
           </p>
           <h2 className="mt-3 font-display text-5xl font-medium md:text-6xl">
-            Спецпроекты POSTUM
+            Спецпроекты ПОСТУМ
           </h2>
           <p className="mx-auto mt-4 max-w-xl font-display italic text-muted-foreground">
             Длинные формы, в которых мы возвращаем мысли время и место.
@@ -136,7 +136,7 @@ function Index() {
 
       <footer className="border-t border-border">
         <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-3 px-6 py-8 text-xs uppercase tracking-[0.3em] text-muted-foreground md:flex-row">
-          <span>© POSTUM</span>
+          <span>© ПОСТУМ</span>
           <span className="ornament font-display normal-case tracking-normal italic">
             verba volant, scripta manent
           </span>
