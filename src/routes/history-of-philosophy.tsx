@@ -5,7 +5,7 @@ import { movements } from "@/data/movements";
 export const Route = createFileRoute("/history-of-philosophy")({
   head: () => ({
     meta: [
-      { title: "История философии — Спецпроект POSTUM" },
+      { title: "История философии — Спецпроект ПОСТУМ" },
       {
         name: "description",
         content:
@@ -13,7 +13,7 @@ export const Route = createFileRoute("/history-of-philosophy")({
       },
       {
         property: "og:title",
-        content: "История философии — Спецпроект POSTUM",
+        content: "История философии — Спецпроект ПОСТУМ",
       },
       {
         property: "og:description",
@@ -40,7 +40,7 @@ function HistoryOfPhilosophy() {
       {/* Top bar */}
       <header className="mx-auto flex max-w-7xl items-center justify-between px-6 py-6 text-xs uppercase tracking-[0.3em] text-muted-foreground">
         <Link to="/" className="transition-colors hover:text-foreground">
-          ← POSTUM
+          ← ПОСТУМ
         </Link>
         <span>Спецпроект №01</span>
       </header>
@@ -48,7 +48,7 @@ function HistoryOfPhilosophy() {
       {/* Title */}
       <section className="mx-auto max-w-5xl px-6 pt-12 pb-16 text-center">
         <p className="text-xs uppercase tracking-[0.4em] text-muted-foreground">
-          Спецпроект POSTUM
+          Спецпроект ПОСТУМ
         </p>
         <h1
           className="mt-6 font-display font-medium leading-[0.9] tracking-tight text-foreground"
@@ -160,7 +160,7 @@ function HistoryOfPhilosophy() {
       <footer className="border-t border-border">
         <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-3 px-6 py-8 text-xs uppercase tracking-[0.3em] text-muted-foreground md:flex-row">
           <Link to="/" className="transition-colors hover:text-foreground">
-            ← Вернуться в POSTUM
+            ← Вернуться в ПОСТУМ
           </Link>
           <span className="ornament font-display normal-case italic tracking-normal">
             philosophia perennis
