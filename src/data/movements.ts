@@ -1,6 +1,8 @@
 export interface Philosopher {
   name: string;
   years: string;
+  bio?: string;
+  ideas?: string[];
 }
 
 export interface Movement {
