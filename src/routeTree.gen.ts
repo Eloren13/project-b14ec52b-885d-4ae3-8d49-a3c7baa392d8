@@ -9,8 +9,14 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as HistoryOfPhilosophyRouteImport } from './routes/history-of-philosophy'
 import { Route as IndexRouteImport } from './routes/index'
 
+const HistoryOfPhilosophyRoute = HistoryOfPhilosophyRouteImport.update({
+  id: '/history-of-philosophy',
+  path: '/history-of-philosophy',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
@@ -19,28 +25,39 @@ const IndexRoute = IndexRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/history-of-philosophy': typeof HistoryOfPhilosophyRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/history-of-philosophy': typeof HistoryOfPhilosophyRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/history-of-philosophy': typeof HistoryOfPhilosophyRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths: '/' | '/history-of-philosophy'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to: '/' | '/history-of-philosophy'
+  id: '__root__' | '/' | '/history-of-philosophy'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  HistoryOfPhilosophyRoute: typeof HistoryOfPhilosophyRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/history-of-philosophy': {
+      id: '/history-of-philosophy'
+      path: '/history-of-philosophy'
+      fullPath: '/history-of-philosophy'
+      preLoaderRoute: typeof HistoryOfPhilosophyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/': {
       id: '/'
       path: '/'
@@ -53,17 +70,8 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  HistoryOfPhilosophyRoute: HistoryOfPhilosophyRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
-
-import type { getRouter } from './router.tsx'
-import type { startInstance } from './start.ts'
-declare module '@tanstack/react-start' {
-  interface Register {
-    ssr: true
-    router: Awaited<ReturnType<typeof getRouter>>
-    config: Awaited<ReturnType<typeof startInstance.getOptions>>
-  }
-}
