@@ -136,16 +136,33 @@ function HistoryOfPhilosophy() {
                     <h3 className="text-xs uppercase tracking-[0.3em] text-muted-foreground">
                       Философы
                     </h3>
-                    <ul className="mt-4 divide-y divide-border">
+                    <ul className="mt-4 space-y-6">
                       {m.philosophers.map((p) => (
-                        <li
-                          key={p.name}
-                          className="flex items-baseline justify-between gap-4 py-2"
-                        >
-                          <span className="font-display text-lg">{p.name}</span>
-                          <span className="font-mono text-xs text-muted-foreground">
-                            {p.years}
-                          </span>
+                        <li key={p.name} className="border-b border-border/60 pb-5 last:border-b-0">
+                          <div className="flex items-baseline justify-between gap-4">
+                            <span className="font-display text-lg">{p.name}</span>
+                            <span className="font-mono text-xs text-muted-foreground">
+                              {p.years}
+                            </span>
+                          </div>
+                          {p.bio && (
+                            <p className="mt-2 text-sm italic leading-relaxed text-muted-foreground">
+                              {p.bio}
+                            </p>
+                          )}
+                          {p.ideas && p.ideas.length > 0 && (
+                            <ul className="mt-3 space-y-2">
+                              {p.ideas.map((idea, k) => (
+                                <li
+                                  key={k}
+                                  className="flex gap-3 text-sm leading-relaxed"
+                                >
+                                  <span className="mt-2 h-px w-3 shrink-0 bg-accent/70" />
+                                  <span>{idea}</span>
+                                </li>
+                              ))}
+                            </ul>
+                          )}
                         </li>
                       ))}
                     </ul>
