@@ -34,69 +34,94 @@ function Index() {
       </header>
 
       {/* Hero */}
-      <section className="relative mx-auto flex max-w-[1600px] flex-col items-center px-4 pt-8 pb-24 text-center">
-        <p className="font-display text-sm italic text-muted-foreground md:text-base">
+      <section className="relative mx-auto flex max-w-[1600px] flex-col items-center px-4 pt-8 pb-20 text-center">
+        <p className="text-xs uppercase tracking-[0.4em] text-muted-foreground">
           ex post — после написанного
         </p>
         <h1
-          className="font-display font-medium leading-[0.85] tracking-tight text-foreground"
+          className="mt-6 font-display font-medium leading-[0.85] tracking-tight text-foreground"
           style={{ fontSize: "clamp(5rem, 22vw, 22rem)" }}
         >
           ПОСТУМ
         </h1>
-        <div className="mt-6 flex items-center gap-4 text-muted-foreground">
+        <div className="mt-8 flex items-center gap-4 text-muted-foreground">
           <span className="h-px w-16 bg-rule md:w-32" />
           <span className="font-display text-base italic md:text-lg">
-            альманах слова и мысли
+            альманах <em className="text-accent">слова и мысли</em>
           </span>
           <span className="h-px w-16 bg-rule md:w-32" />
+        </div>
+        <div className="ornament mt-10 inline-block font-display text-xs uppercase tracking-[0.4em] text-muted-foreground">
+          выпуск №01 · MMXXVI
         </div>
       </section>
 
       {/* Random poem */}
-      <section className="mx-auto max-w-3xl px-6 pb-32">
-        <div className="mb-10 flex items-center justify-center gap-4 text-xs uppercase tracking-[0.4em] text-muted-foreground">
-          <span className="h-px w-12 bg-rule" />
-          Стихотворение дня
-          <span className="h-px w-12 bg-rule" />
+      <section className="mx-auto max-w-5xl px-6 pb-32">
+        <div className="mb-12 border-y border-border py-4 text-center">
+          <p className="text-xs uppercase tracking-[0.4em] text-muted-foreground">
+            Раздел №01 · Стихотворение дня
+          </p>
         </div>
 
-        <article className="relative rounded-sm border border-border bg-card/60 p-10 backdrop-blur-sm md:p-16">
-          <span className="absolute -top-6 left-1/2 -translate-x-1/2 bg-background px-4 font-display text-3xl text-accent">
-            ❦
-          </span>
-          <h2 className="font-display text-3xl font-medium text-foreground md:text-4xl">
-            {poem.title}
-          </h2>
-          <p className="mt-2 text-sm uppercase tracking-[0.25em] text-muted-foreground">
-            {poem.author}
-            {poem.year ? ` · ${poem.year}` : ""}
-          </p>
-          <div className="mt-10 space-y-2 font-display text-xl leading-relaxed text-foreground md:text-2xl">
-            {poem.lines.map((line, i) => (
-              <p key={i} className="italic">
-                {line}
+        <article className="grid gap-10 border-t border-border pt-12 md:grid-cols-12">
+          <div className="md:col-span-3">
+            <div className="font-display text-6xl font-medium text-accent/70">01</div>
+            <p className="mt-4 text-xs uppercase tracking-[0.3em] text-muted-foreground">
+              {poem.author}
+            </p>
+            {poem.year && (
+              <p className="mt-1 font-mono text-xs text-muted-foreground">
+                {poem.year}
               </p>
-            ))}
+            )}
+            <p className="mt-4 font-display italic text-muted-foreground">
+              обновляется при каждом визите
+            </p>
           </div>
-          <p className="mt-10 text-center text-xs uppercase tracking-[0.3em] text-muted-foreground">
-            обновляется при каждом визите
-          </p>
+
+          <div className="md:col-span-9">
+            <h2 className="font-display text-4xl font-medium leading-tight md:text-5xl">
+              {poem.title}
+              <br />
+              <em className="italic text-accent text-2xl md:text-3xl">
+                — {poem.author}
+              </em>
+            </h2>
+            <div className="mt-8 space-y-2 font-display text-xl leading-relaxed text-foreground md:text-2xl">
+              {poem.lines.map((line, i) => (
+                <p key={i} className="italic">
+                  {line}
+                </p>
+              ))}
+            </div>
+          </div>
         </article>
       </section>
 
       {/* Special projects */}
       <section className="mx-auto max-w-6xl px-6 pb-32">
-        <div className="mb-12 text-center">
+        <div className="mb-12 border-y border-border py-4 text-center">
           <p className="text-xs uppercase tracking-[0.4em] text-muted-foreground">
-            Раздел
+            Раздел №02 · Спецпроекты
           </p>
-          <h2 className="mt-3 font-display text-5xl font-medium md:text-6xl">
-            Спецпроекты ПОСТУМ
+        </div>
+
+        <div className="mb-14 text-center">
+          <h2
+            className="font-display font-medium leading-[0.9] tracking-tight"
+            style={{ fontSize: "clamp(2.5rem, 7vw, 6rem)" }}
+          >
+            Спецпроекты
+            <br />
+            <em className="italic text-accent">ПОСТУМ</em>
           </h2>
-          <p className="mx-auto mt-4 max-w-xl font-display italic text-muted-foreground">
+          <p className="mx-auto mt-6 max-w-xl font-display text-lg italic text-muted-foreground">
             Длинные формы, в которых мы возвращаем мысли время и место.
           </p>
+          <div className="ornament mx-auto mt-8 inline-block font-display text-xs uppercase tracking-[0.4em] text-muted-foreground">
+            1 проект в эфире
+          </div>
         </div>
 
         <div className="grid gap-8 md:grid-cols-2">
@@ -109,7 +134,9 @@ function Index() {
               <span className="text-accent">→</span>
             </div>
             <h3 className="mt-8 font-display text-4xl font-medium leading-tight text-foreground md:text-5xl">
-              История философии
+              История
+              <br />
+              <em className="italic text-accent">философии</em>
             </h3>
             <p className="mt-4 max-w-md font-display italic text-muted-foreground">
               От досократиков до спекулятивного реализма — карта движений,
@@ -122,9 +149,14 @@ function Index() {
           </Link>
 
           <div className="relative rounded-sm border border-dashed border-border p-10 text-muted-foreground">
-            <div className="text-xs uppercase tracking-[0.3em]">Скоро</div>
-            <h3 className="mt-8 font-display text-4xl font-medium italic leading-tight md:text-5xl">
-              Готовится&nbsp;к&nbsp;изданию
+            <div className="flex items-center justify-between text-xs uppercase tracking-[0.3em]">
+              <span>Спецпроект №02</span>
+              <span>скоро</span>
+            </div>
+            <h3 className="mt-8 font-display text-4xl font-medium leading-tight md:text-5xl">
+              Готовится
+              <br />
+              <em className="italic text-accent/70">к&nbsp;изданию</em>
             </h3>
             <p className="mt-4 max-w-md font-display italic">
               Пока в работе только один спецпроект. Следующие — на письменном
