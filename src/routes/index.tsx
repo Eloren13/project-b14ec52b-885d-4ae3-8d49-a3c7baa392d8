@@ -57,59 +57,45 @@ function Index() {
       </section>
 
       {/* Random poem */}
-      <section className="mx-auto max-w-5xl px-6 pb-32">
-        <div className="mb-12 border-y border-border py-4 text-center">
-          <p className="text-xs uppercase tracking-[0.4em] text-muted-foreground">
-            Раздел №01 · Стихотворение дня
-          </p>
+      <section className="mx-auto max-w-3xl px-6 pb-32 text-center">
+        <p className="text-xs uppercase tracking-[0.4em] text-muted-foreground">
+          Стихотворение дня
+        </p>
+        <div className="ornament mx-auto mt-3 inline-block font-display text-[10px] uppercase tracking-[0.4em] text-muted-foreground/70">
+          обновляется при каждом визите
         </div>
 
-        <article className="grid gap-10 border-t border-border pt-12 md:grid-cols-12">
-          <div className="md:col-span-3">
-            <div className="font-display text-6xl font-medium text-accent/70">01</div>
-            <p className="mt-4 text-xs uppercase tracking-[0.3em] text-muted-foreground">
-              {poem.author}
-            </p>
-            {poem.year && (
-              <p className="mt-1 font-mono text-xs text-muted-foreground">
-                {poem.year}
-              </p>
-            )}
-            <p className="mt-4 font-display italic text-muted-foreground">
-              обновляется при каждом визите
-            </p>
-          </div>
+        <h2 className="mt-10 font-display text-4xl font-medium leading-tight md:text-5xl">
+          {poem.title}
+        </h2>
+        <p className="mt-4 font-display text-lg italic text-accent md:text-xl">
+          {poem.author}
+          {poem.year ? <span className="text-muted-foreground"> · {poem.year}</span> : null}
+        </p>
 
-          <div className="md:col-span-9">
-            <h2 className="font-display text-4xl font-medium leading-tight md:text-5xl">
-              {poem.title}
-              <br />
-              <em className="italic text-accent text-2xl md:text-3xl">
-                — {poem.author}
-              </em>
-            </h2>
-            <div className="mt-8 space-y-2 font-display text-xl leading-relaxed text-foreground md:text-2xl">
-              {poem.lines.map((line, i) => (
-                <p key={i} className="italic">
-                  {line}
-                </p>
-              ))}
-            </div>
-          </div>
-        </article>
+        <div className="mx-auto mt-10 flex items-center justify-center gap-4 text-muted-foreground">
+          <span className="h-px w-16 bg-rule" />
+          <span className="font-display text-xs italic">∗</span>
+          <span className="h-px w-16 bg-rule" />
+        </div>
+
+        <div className="mt-10 space-y-2 font-display text-xl leading-relaxed text-foreground md:text-2xl">
+          {poem.lines.map((line, i) => (
+            <p key={i} className="italic">
+              {line}
+            </p>
+          ))}
+        </div>
       </section>
 
       {/* Special projects */}
       <section className="mx-auto max-w-6xl px-6 pb-32">
-        <div className="mb-12 border-y border-border py-4 text-center">
-          <p className="text-xs uppercase tracking-[0.4em] text-muted-foreground">
-            Раздел №02 · Спецпроекты
-          </p>
-        </div>
-
         <div className="mb-14 text-center">
+          <p className="text-xs uppercase tracking-[0.4em] text-muted-foreground">
+            Спецпроекты
+          </p>
           <h2
-            className="font-display font-medium leading-[0.9] tracking-tight"
+            className="mt-6 font-display font-medium leading-[0.9] tracking-tight"
             style={{ fontSize: "clamp(2.5rem, 7vw, 6rem)" }}
           >
             Спецпроекты
