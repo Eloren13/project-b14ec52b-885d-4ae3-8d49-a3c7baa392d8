@@ -3,6 +3,8 @@ export interface Philosopher {
   years: string;
   bio?: string;
   ideas?: string[];
+  school?: string;
+  video?: { url: string; title: string };
 }
 
 export interface Movement {
