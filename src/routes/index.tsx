@@ -91,11 +91,8 @@ function Index() {
       {/* Special projects */}
       <section className="mx-auto max-w-6xl px-6 pb-32">
         <div className="mb-14 text-center">
-          <p className="text-xs uppercase tracking-[0.4em] text-muted-foreground">
-            Спецпроекты
-          </p>
           <h2
-            className="mt-6 font-display font-medium leading-[0.9] tracking-tight"
+            className="font-display font-medium leading-[0.9] tracking-tight"
             style={{ fontSize: "clamp(2.5rem, 7vw, 6rem)" }}
           >
             Спецпроекты
