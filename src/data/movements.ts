@@ -279,6 +279,7 @@ export const movements: Movement[] = [
     philosophers: [
       {
         name: "Эпикур",
+        school: "Эпикурейцы",
         years: "341–270 до н. э.",
         bio: "Основатель эпикуреизма.",
         ideas: [
@@ -295,6 +296,7 @@ export const movements: Movement[] = [
       },
       {
         name: "Зенон Китийский",
+        school: "Стоики",
         years: "ок. 334 – ок. 262 до н. э.",
         bio: "Основатель стоицизма. Основал школу в Афинах («Стоя»).",
         ideas: [
@@ -309,6 +311,7 @@ export const movements: Movement[] = [
       },
       {
         name: "Тимон из Флиунта",
+        school: "Скептики",
         years: "ок. 320 – ок. 230 до н. э.",
         bio: "Ученик Пиррона, скептик. Писал сатирические поэмы («Силлы»). Развивал идеи пирронизма.",
         ideas: [
@@ -317,6 +320,7 @@ export const movements: Movement[] = [
       },
       {
         name: "Сенека",
+        school: "Стоики",
         years: "4 до н. э. – 65 н. э.",
         bio: "Римский философ-стоик, государственный деятель.",
         ideas: [
@@ -326,6 +330,7 @@ export const movements: Movement[] = [
       },
       {
         name: "Эпиктет",
+        school: "Стоики",
         years: "ок. 50 – ок. 138 н. э.",
         bio: "Философ-стоик. Был рабом.",
         ideas: [
@@ -340,6 +345,7 @@ export const movements: Movement[] = [
       },
       {
         name: "Марк Аврелий",
+        school: "Стоики",
         years: "121–180 н. э.",
         bio: "Римский император, философ-стоик. Автор «Размышлений наедине с собой».",
         ideas: [
@@ -357,6 +363,7 @@ export const movements: Movement[] = [
       },
       {
         name: "Плотин",
+        school: "Неоплатоники",
         years: "ок. 204 – 270 н. э.",
         bio: "Основатель неоплатонизма.",
         ideas: [
