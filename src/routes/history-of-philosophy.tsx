@@ -124,22 +124,22 @@ function HistoryOfPhilosophy() {
               className="border-t border-border pt-10 md:pt-12"
             >
               {/* School header */}
-              <div className="flex gap-5 md:gap-7">
-                <div className="pt-1 font-display text-5xl font-medium leading-none text-accent/70 md:pt-2 md:text-7xl">
-                  {String(i + 1).padStart(2, "0")}
-                </div>
-                <div className="flex-1">
-                  <p className="text-[10px] uppercase tracking-[0.3em] text-muted-foreground md:text-xs">
-                    {g.movement.era} · {g.movement.period}
-                  </p>
-                  <h2 className="mt-2 font-display text-3xl font-medium leading-tight md:text-5xl">
-                    {g.school}
-                  </h2>
-                  <p className="mt-2 font-display text-sm italic text-muted-foreground md:text-base">
-                    {g.movement.name}
-                  </p>
-                </div>
-              </div>
+              <div className="flex items-start gap-5 md:gap-7">
+  <div className="font-display text-5xl font-medium leading-none text-accent/70 md:text-7xl">
+    {String(i + 1).padStart(2, "0")}
+  </div>
+  <div className="flex-1">
+    <p className="text-[10px] uppercase tracking-[0.3em] text-muted-foreground md:text-xs">
+      {g.movement.era} · {g.movement.period}
+    </p>
+    <h2 className="mt-2 font-display text-3xl font-medium leading-tight md:text-5xl">
+      {g.school}
+    </h2>
+    <p className="mt-2 font-display text-sm italic text-muted-foreground md:text-base">
+      {g.movement.name}
+    </p>
+  </div>
+</div>
 
               {/* Philosophers */}
               <div className="mt-10 space-y-12 md:mt-14 md:space-y-16">

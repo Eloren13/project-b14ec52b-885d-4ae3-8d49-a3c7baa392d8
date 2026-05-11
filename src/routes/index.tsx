@@ -51,42 +51,43 @@ function Index() {
           </span>
           <span className="h-px w-16 bg-rule md:w-32" />
         </div>
-        <div className="ornament mt-10 inline-block font-display text-xs uppercase tracking-[0.4em] text-muted-foreground">
-          выпуск №01 · MMXXVI
-        </div>
       </section>
 
       {/* Random poem */}
-      <section className="mx-auto max-w-3xl px-6 pb-32 text-center">
-        <p className="text-xs uppercase tracking-[0.4em] text-muted-foreground">
-          Стихотворение дня
+<section className="mx-auto max-w-3xl px-6 pb-32">
+  <div className="border-t border-border pt-16 md:pt-20">
+    <p className="text-xs uppercase tracking-[0.4em] text-muted-foreground">
+      Стихотворение дня
+    </p>
+    <div className="ornament mt-2 font-display text-[10px] uppercase tracking-[0.4em] text-muted-foreground/70">
+      обновляется при каждом визите
+    </div>
+
+    <div className="mt-14 md:mt-16">
+      <h2 className="font-display text-4xl font-medium leading-tight md:text-5xl">
+        {poem.title}
+      </h2>
+      <p className="mt-4 font-display text-lg italic text-accent md:text-xl">
+        {poem.author}
+        {poem.year ? <span className="text-muted-foreground"> · {poem.year}</span> : null}
+      </p>
+    </div>
+
+    <div className="mt-10 space-y-1 font-display text-xl leading-relaxed text-foreground md:text-2xl">
+      {poem.lines.map((line, i) => (
+        <p key={i} className="italic">
+          {line}
         </p>
-        <div className="ornament mx-auto mt-3 inline-block font-display text-[10px] uppercase tracking-[0.4em] text-muted-foreground/70">
-          обновляется при каждом визите
-        </div>
+      ))}
+    </div>
 
-        <h2 className="mt-10 font-display text-4xl font-medium leading-tight md:text-5xl">
-          {poem.title}
-        </h2>
-        <p className="mt-4 font-display text-lg italic text-accent md:text-xl">
-          {poem.author}
-          {poem.year ? <span className="text-muted-foreground"> · {poem.year}</span> : null}
-        </p>
-
-        <div className="mx-auto mt-10 flex items-center justify-center gap-4 text-muted-foreground">
-          <span className="h-px w-16 bg-rule" />
-          <span className="font-display text-xs italic">∗</span>
-          <span className="h-px w-16 bg-rule" />
-        </div>
-
-        <div className="mt-10 space-y-2 font-display text-xl leading-relaxed text-foreground md:text-2xl">
-          {poem.lines.map((line, i) => (
-            <p key={i} className="italic">
-              {line}
-            </p>
-          ))}
-        </div>
-      </section>
+    <div className="mt-14 flex items-center gap-4 text-muted-foreground">
+      <span className="h-px w-16 bg-rule" />
+      <span className="font-display text-xs italic">∗</span>
+      <span className="h-px w-16 bg-rule" />
+    </div>
+  </div>
+</section>
 
       {/* Special projects */}
       <section className="mx-auto max-w-6xl px-6 pb-32">
