@@ -117,55 +117,94 @@ function HistoryOfPhilosophy() {
                   «{m.tagline}»
                 </p>
 
-                <div className="mt-8 grid gap-10 md:grid-cols-2">
-                  <div>
-                    <h3 className="text-xs uppercase tracking-[0.3em] text-muted-foreground">
-                      Основные идеи
-                    </h3>
-                    <ul className="mt-4 space-y-3">
-                      {m.ideas.map((idea, j) => (
-                        <li key={j} className="flex gap-3 text-base leading-relaxed">
-                          <span className="mt-2 h-1 w-3 shrink-0 bg-accent" />
-                          <span>{idea}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
+                <div className="mt-10">
+                  <h3 className="text-xs uppercase tracking-[0.3em] text-muted-foreground">
+                    Основные идеи
+                  </h3>
+                  <ul className="mt-5 grid gap-3 md:grid-cols-2">
+                    {m.ideas.map((idea, j) => (
+                      <li
+                        key={j}
+                        className="flex gap-3 text-base leading-relaxed"
+                      >
+                        <span className="mt-2 h-1 w-3 shrink-0 bg-accent" />
+                        <span>{idea}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
 
-                  <div>
-                    <h3 className="text-xs uppercase tracking-[0.3em] text-muted-foreground">
-                      Философы
-                    </h3>
-                    <ul className="mt-4 space-y-6">
-                      {m.philosophers.map((p) => (
-                        <li key={p.name} className="border-b border-border/60 pb-5 last:border-b-0">
-                          <div className="flex items-baseline justify-between gap-4">
-                            <span className="font-display text-lg">{p.name}</span>
-                            <span className="font-mono text-xs text-muted-foreground">
-                              {p.years}
-                            </span>
+                <div className="mt-14">
+                  <h3 className="text-xs uppercase tracking-[0.3em] text-muted-foreground">
+                    Философы
+                  </h3>
+                  <div className="mt-8 space-y-12">
+                    {m.philosophers.map((p, idx) => (
+                      <article
+                        key={p.name}
+                        className="grid gap-6 md:grid-cols-12"
+                      >
+                        <div className="md:col-span-3">
+                          <div className="font-display text-xs uppercase tracking-[0.3em] text-muted-foreground">
+                            № {String(idx + 1).padStart(2, "0")}
                           </div>
+                          <h4 className="mt-3 font-display text-2xl font-medium leading-tight md:text-3xl">
+                            {p.name}
+                          </h4>
+                          <p className="mt-2 font-mono text-xs text-muted-foreground">
+                            {p.years}
+                          </p>
+                          {p.school && (
+                            <p className="mt-3 inline-block border border-border px-2 py-1 text-[10px] uppercase tracking-[0.25em] text-accent">
+                              {p.school}
+                            </p>
+                          )}
+                        </div>
+
+                        <div className="md:col-span-9">
                           {p.bio && (
-                            <p className="mt-2 text-sm italic leading-relaxed text-muted-foreground">
+                            <p className="font-display text-lg italic leading-relaxed text-foreground/90 md:text-xl">
                               {p.bio}
                             </p>
                           )}
                           {p.ideas && p.ideas.length > 0 && (
-                            <ul className="mt-3 space-y-2">
-                              {p.ideas.map((idea, k) => (
-                                <li
-                                  key={k}
-                                  className="flex gap-3 text-sm leading-relaxed"
-                                >
-                                  <span className="mt-2 h-px w-3 shrink-0 bg-accent/70" />
-                                  <span>{idea}</span>
-                                </li>
-                              ))}
-                            </ul>
+                            <div className="mt-6">
+                              <p className="text-[10px] uppercase tracking-[0.3em] text-muted-foreground">
+                                Основные идеи
+                              </p>
+                              <ul className="mt-3 space-y-3">
+                                {p.ideas.map((idea, k) => (
+                                  <li
+                                    key={k}
+                                    className="flex gap-3 text-base leading-relaxed"
+                                  >
+                                    <span className="mt-2 h-px w-4 shrink-0 bg-accent/70" />
+                                    <span>{idea}</span>
+                                  </li>
+                                ))}
+                              </ul>
+                            </div>
                           )}
-                        </li>
-                      ))}
-                    </ul>
+                          {p.video && (
+                            <figure className="mt-8">
+                              <div className="relative w-full overflow-hidden rounded-sm border border-border bg-card" style={{ aspectRatio: "16 / 9" }}>
+                                <iframe
+                                  src={p.video.url}
+                                  title={p.video.title}
+                                  loading="lazy"
+                                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                  allowFullScreen
+                                  className="absolute inset-0 h-full w-full"
+                                />
+                              </div>
+                              <figcaption className="mt-3 text-xs uppercase tracking-[0.3em] text-muted-foreground">
+                                Видео · {p.video.title}
+                              </figcaption>
+                            </figure>
+                          )}
+                        </div>
+                      </article>
+                    ))}
                   </div>
                 </div>
               </div>
