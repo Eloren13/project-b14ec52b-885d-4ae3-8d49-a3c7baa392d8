@@ -124,8 +124,8 @@ function HistoryOfPhilosophy() {
               className="border-t border-border pt-10 md:pt-12"
             >
               {/* School header */}
-              <div className="flex items-baseline gap-5 md:gap-7">
-                <div className="font-display text-5xl font-medium leading-none text-accent/70 md:text-7xl">
+              <div className="flex gap-5 md:gap-7">
+                <div className="pt-1 font-display text-5xl font-medium leading-none text-accent/70 md:pt-2 md:text-7xl">
                   {String(i + 1).padStart(2, "0")}
                 </div>
                 <div className="flex-1">
@@ -183,24 +183,30 @@ function HistoryOfPhilosophy() {
                     )}
 
                     {p.video && (
-                      <figure className="mt-7">
-                        <div
-                          className="relative w-full overflow-hidden rounded-sm border border-border bg-card"
-                          style={{ aspectRatio: "16 / 9" }}
+                      <a
+                        href={p.video.url.replace("/embed/", "/watch?v=")}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="mt-6 inline-flex items-center gap-3 rounded-sm border border-border px-4 py-3 text-sm transition-colors hover:border-accent hover:text-accent"
+                      >
+                        <svg
+                          width="16"
+                          height="16"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          strokeWidth="2"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          className="shrink-0"
                         >
-                          <iframe
-                            src={p.video.url}
-                            title={p.video.title}
-                            loading="lazy"
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                            allowFullScreen
-                            className="absolute inset-0 h-full w-full"
-                          />
-                        </div>
-                        <figcaption className="mt-3 text-[10px] uppercase tracking-[0.3em] text-muted-foreground md:text-xs">
-                          Видео · {p.video.title}
-                        </figcaption>
-                      </figure>
+                          <polygon points="5 3 19 12 5 21 5 3" />
+                        </svg>
+                        <span>
+                          Смотреть на YouTube ·{" "}
+                          <span className="italic">{p.video.title}</span>
+                        </span>
+                      </a>
                     )}
                   </article>
                 ))}
