@@ -56,7 +56,7 @@ function Index() {
       {/* Random poem */}
 <section className="mx-auto max-w-3xl px-6 pb-32 text-center">
   <div className="border-t border-border pt-16 md:pt-20">
-    <p className="text-xs uppercase tracking-[0.4em] text-muted-foreground">
+    <p className="text-sm uppercase tracking-[0.4em] text-muted-foreground md:text-base">
       Стихотворение дня
     </p>
     <div className="ornament mt-2 font-display text-[10px] uppercase tracking-[0.4em] text-muted-foreground/70">
@@ -64,10 +64,10 @@ function Index() {
     </div>
 
     <div className="mt-14 md:mt-16">
-      <h2 className="font-display text-4xl font-medium leading-tight md:text-5xl">
+      <h2 className="font-display text-5xl font-medium leading-tight md:text-6xl">
         {poem.title}
       </h2>
-      <p className="mt-4 font-display text-lg italic text-accent md:text-xl">
+      <p className="mt-4 font-display text-2xl italic text-accent md:text-3xl">
         {poem.author}
         {poem.year ? <span className="text-muted-foreground"> · {poem.year}</span> : null}
       </p>
