@@ -187,11 +187,11 @@ function HistoryOfPhilosophy() {
                         href={p.video.url.replace("/embed/", "/watch?v=")}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="mt-6 inline-flex items-center gap-3 rounded-sm border border-border px-4 py-3 text-sm transition-colors hover:border-accent hover:text-accent"
+                        className="mt-6 mx-auto inline-flex w-full max-w-[24rem] items-center justify-center gap-3 rounded-sm border border-accent bg-accent/10 px-6 py-4 text-base font-medium text-accent transition-all hover:border-accent/80 hover:bg-accent/20 hover:text-accent"
                       >
                         <svg
-                          width="16"
-                          height="16"
+                          width="18"
+                          height="18"
                           viewBox="0 0 24 24"
                           fill="none"
                           stroke="currentColor"
@@ -202,9 +202,8 @@ function HistoryOfPhilosophy() {
                         >
                           <polygon points="5 3 19 12 5 21 5 3" />
                         </svg>
-                        <span>
-                          Смотреть на YouTube ·{" "}
-                          <span className="italic">{p.video.title}</span>
+                        <span className="text-center">
+                          Смотреть на YouTube · <span className="italic">{p.video.title}</span>
                         </span>
                       </a>
                     )}
