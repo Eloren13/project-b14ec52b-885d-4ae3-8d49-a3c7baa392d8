@@ -56,7 +56,7 @@ function Index() {
       {/* Random poem */}
 <section className="mx-auto max-w-3xl px-6 pb-32 text-center">
   <div className="border-t border-border pt-16 md:pt-20">
-    <p className="text-sm uppercase tracking-[0.4em] text-muted-foreground md:text-base">
+    <p className="text-base uppercase tracking-[0.4em] text-muted-foreground md:text-xl">
       Стихотворение дня
     </p>
     <div className="ornament mt-2 font-display text-[10px] uppercase tracking-[0.4em] text-muted-foreground/70">
