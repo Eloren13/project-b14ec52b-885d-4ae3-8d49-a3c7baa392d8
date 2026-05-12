@@ -81,7 +81,7 @@ function Index() {
       ))}
     </div>
 
-    <div className="mt-14 flex items-center gap-4 text-muted-foreground">
+    <div className="mt-14 flex items-center justify-center gap-4 text-muted-foreground">
       <span className="h-px w-16 bg-rule" />
       <span className="font-display text-xs italic">∗</span>
       <span className="h-px w-16 bg-rule" />
