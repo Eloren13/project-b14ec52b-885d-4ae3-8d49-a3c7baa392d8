@@ -187,11 +187,11 @@ function HistoryOfPhilosophy() {
                         href={p.video.url.replace("/embed/", "/watch?v=")}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="mt-6 mx-auto inline-flex w-full max-w-[24rem] items-center justify-center gap-3 rounded-sm border border-accent bg-accent/10 px-6 py-4 text-base font-medium text-accent transition-all hover:border-accent/80 hover:bg-accent/20 hover:text-accent"
+                        className="mt-6 mx-auto inline-flex w-full max-w-[22rem] items-center justify-center gap-2 rounded-full border border-accent bg-accent/10 px-4 py-2 text-sm font-medium text-accent transition-all hover:border-accent/80 hover:bg-accent/20 hover:text-accent"
                       >
                         <svg
-                          width="18"
-                          height="18"
+                          width="16"
+                          height="16"
                           viewBox="0 0 24 24"
                           fill="none"
                           stroke="currentColor"
