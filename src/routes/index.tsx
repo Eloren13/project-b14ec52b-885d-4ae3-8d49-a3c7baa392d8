@@ -63,7 +63,7 @@ function Index() {
       обновляется при каждом визите
     </div>
 
-    <div className="mt-14 md:mt-16">
+    <div className="mt-10 md:mt-12">
       <h2 className="font-display text-5xl font-medium leading-tight md:text-6xl">
         {poem.title}
       </h2>
