@@ -1,6 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useMemo, useState } from "react";
-import { movements, type Movement, type Philosopher } from "@/data/movements";
+import { movements, type Movement, type Philosopher } from "../data/movements";
 
 export const Route = createFileRoute("/history-of-philosophy")({
   head: () => ({

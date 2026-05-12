@@ -10,11 +10,17 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as HistoryOfPhilosophyRouteImport } from './routes/history-of-philosophy'
+import { Route as ArmenianFiguresRouteImport } from './routes/armenian-figures'
 import { Route as IndexRouteImport } from './routes/index'
 
 const HistoryOfPhilosophyRoute = HistoryOfPhilosophyRouteImport.update({
   id: '/history-of-philosophy',
   path: '/history-of-philosophy',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ArmenianFiguresRoute = ArmenianFiguresRouteImport.update({
+  id: '/armenian-figures',
+  path: '/armenian-figures',
   getParentRoute: () => rootRouteImport,
 } as any)
 const IndexRoute = IndexRouteImport.update({
@@ -25,27 +31,31 @@ const IndexRoute = IndexRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/armenian-figures': typeof ArmenianFiguresRoute
   '/history-of-philosophy': typeof HistoryOfPhilosophyRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/armenian-figures': typeof ArmenianFiguresRoute
   '/history-of-philosophy': typeof HistoryOfPhilosophyRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/armenian-figures': typeof ArmenianFiguresRoute
   '/history-of-philosophy': typeof HistoryOfPhilosophyRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/history-of-philosophy'
+  fullPaths: '/' | '/armenian-figures' | '/history-of-philosophy'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/history-of-philosophy'
-  id: '__root__' | '/' | '/history-of-philosophy'
+  to: '/' | '/armenian-figures' | '/history-of-philosophy'
+  id: '__root__' | '/' | '/armenian-figures' | '/history-of-philosophy'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  ArmenianFiguresRoute: typeof ArmenianFiguresRoute
   HistoryOfPhilosophyRoute: typeof HistoryOfPhilosophyRoute
 }
 
@@ -56,6 +66,13 @@ declare module '@tanstack/react-router' {
       path: '/history-of-philosophy'
       fullPath: '/history-of-philosophy'
       preLoaderRoute: typeof HistoryOfPhilosophyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/armenian-figures': {
+      id: '/armenian-figures'
+      path: '/armenian-figures'
+      fullPath: '/armenian-figures'
+      preLoaderRoute: typeof ArmenianFiguresRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/': {
@@ -70,6 +87,7 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  ArmenianFiguresRoute: ArmenianFiguresRoute,
   HistoryOfPhilosophyRoute: HistoryOfPhilosophyRoute,
 }
 export const routeTree = rootRouteImport

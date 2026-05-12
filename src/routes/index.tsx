@@ -1,6 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useMemo } from "react";
-import { poems } from "@/data/poems";
+import { poems } from "../data/poems";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -156,7 +156,15 @@ function Index() {
           <span className="ornament font-display normal-case tracking-normal italic">
             verba volant, scripta manent
           </span>
-          <span>альманах</span>
+          <span className="font-display text-xs uppercase tracking-[0.3em]">
+            <Link
+              to="/armenian-figures"
+              className="text-inherit underline-offset-2 transition-colors hover:underline"
+            >
+              А
+            </Link>
+            ЛЬМАНАХ
+          </span>
         </div>
       </footer>
     </div>
