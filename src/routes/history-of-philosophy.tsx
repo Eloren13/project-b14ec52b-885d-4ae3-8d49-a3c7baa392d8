@@ -124,7 +124,7 @@ function HistoryOfPhilosophy() {
               className="border-t border-border pt-10 md:pt-12"
             >
               {/* School header */}
-              <div className="flex items-end gap-5 md:gap-7">
+              <div className="flex items-center gap-5 md:gap-7">
                 <div className="font-display text-5xl font-medium leading-none text-accent/70 md:text-7xl">
                   {String(i + 1).padStart(2, "0")}
                 </div>
