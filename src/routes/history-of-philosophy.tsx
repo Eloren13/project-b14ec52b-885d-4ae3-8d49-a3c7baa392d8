@@ -90,7 +90,7 @@ function HistoryOfPhilosophy() {
           катастрофах. Карта философских школ с их главными идеями и философами.
         </p>
         <div className="ornament mx-auto mt-8 inline-block font-display text-[10px] uppercase tracking-[0.4em] text-muted-foreground md:text-xs">
-          {groups.length} школ · {movements.length} эпох мысли
+          {groups.length} школа · {movements.length} эпох мысли
         </div>
       </section>
 
