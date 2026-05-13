@@ -157,12 +157,15 @@ function Index() {
             verba volant, scripta manent
           </span>
           <span className="font-display text-xs uppercase tracking-[0.3em]">
-            <Link
-              to="/armenian-figures"
-              className="text-inherit underline-offset-2 transition-colors hover:underline"
+            <a
+              href="/armenian-figures"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-accent underline underline-offset-4 transition-colors hover:text-foreground"
+              aria-label="Открыть «Армянские деятели» в новой вкладке"
             >
               А
-            </Link>
+            </a>
             ЛЬМАНАХ
           </span>
         </div>
