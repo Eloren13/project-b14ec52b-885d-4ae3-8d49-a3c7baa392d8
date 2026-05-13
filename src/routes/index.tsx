@@ -1,6 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useMemo } from "react";
-import { poems } from "@/data/poems";
+import { poems } from "../data/poems";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -56,7 +56,7 @@ function Index() {
       {/* Random poem */}
 <section className="mx-auto max-w-3xl px-6 pb-32 text-center">
   <div className="border-t border-border pt-16 md:pt-20">
-    <p className="text-sm uppercase tracking-[0.4em] text-muted-foreground md:text-base">
+    <p className="text-base uppercase tracking-[0.4em] text-muted-foreground md:text-xl">
       Стихотворение дня
     </p>
     <div className="ornament mt-2 font-display text-[10px] uppercase tracking-[0.4em] text-muted-foreground/70">
@@ -156,7 +156,18 @@ function Index() {
           <span className="ornament font-display normal-case tracking-normal italic">
             verba volant, scripta manent
           </span>
-          <span>альманах</span>
+          <span className="font-display text-xs uppercase tracking-[0.3em]">
+            <a
+              href="/armenian-figures"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-accent underline underline-offset-4 transition-colors hover:text-foreground"
+              aria-label="Открыть «Армянские деятели» в новой вкладке"
+            >
+              А
+            </a>
+            ЛЬМАНАХ
+          </span>
         </div>
       </footer>
     </div>
